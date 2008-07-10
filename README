@@ -48,15 +48,15 @@ BUGS
 SUPPORT
     Bugs should be reported via the CPAN bug tracker at
 
-    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Process>
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Process-Backgroundable>
 
     For other issues, contact the author.
 
 AUTHOR
-    Adam Kennedy <adamk@cpan.org>, <http://ali.as/>
+    Adam Kennedy <adamk@cpan.org>
 
 COPYRIGHT
-    Copyright 2006 - 2007 Adam Kennedy.
+    Copyright 2006 - 2008 Adam Kennedy.
 
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.

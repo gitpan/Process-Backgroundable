@@ -8,7 +8,7 @@ BEGIN {
 	$^W = 1;
 }
 
-use Test::More tests => 9;
+use Test::More tests => 8;
 use File::Spec::Functions ':ALL';
 use lib catdir('t', 'lib');
 
@@ -28,13 +28,10 @@ BEGIN {
 # Create the test file
 use File::Remove ();
 my $background = catfile('t', 'background_file.txt');
-unless ( -f $background ) {
-	open( FILE, '>', $background ) or die "Failed to open test file to write";
-	print FILE "Test content\n";
-	close FILE;
-}
-ok( -f $background, 'Background test file exists' );
-END { if ( -f $background ) { File::Remove::remove($background) } }
+File::Remove::clear($background);
+open( FILE, '>', $background ) or die "Failed to open test file to write";
+print FILE "Test content\n";
+close FILE;
 
 use MyBackgroundProcess ();
 SCOPE: {
@@ -66,5 +63,3 @@ SCOPE: {
 	# Check the file is gone now
 	ok( ! -f $background, 'Test file is removed correctly' );
 }
-
-exit(0);
